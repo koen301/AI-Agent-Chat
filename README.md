@@ -2,6 +2,10 @@
 
 基于 **TypeScript + Vercel AI SDK + React** 的个人知识库问答助手，支持 RAG 检索增强生成与 Agent 工具调用。
 
+## 截图
+
+![界面预览](docs/screenshot.png)
+
 ## 技术栈
 
 | 层级 | 技术 | 说明 |
@@ -150,10 +154,6 @@ A: 确保使用 `/api/chat/stream` 或 `/api/agent/stream` 接口
 
 ### Q: 如何清空知识库？
 A: 调用 `POST /api/clear` 接口
-
-## 截图
-
-![界面预览](docs/screenshot.png)
 
 ## 许可证
 
