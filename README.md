@@ -52,7 +52,7 @@ npm install -g chromadb
 chroma run --path ./chroma_db
 ```
 
-> 不启动 ChromaDB 时，项目会自动使用内存向量库（重启后数据丢失）
+> 不方便启动 ChromaDB 时，项目可选使用内存向量库（重启后数据丢失）
 
 ### 3. 配置 API Key
 
@@ -65,7 +65,7 @@ cp backend/.env.example backend/.env
 ```
 OPENAI_API_KEY=sk-your-key
 OPENAI_BASE_URL=https://api.siliconflow.cn/v1
-LLM_MODEL=Qwen/Qwen2.5-7B-Instruct
+LLM_MODEL=Pro/zai-org/GLM-5.1
 EMBEDDING_MODEL=baai/bge-m3
 EMBEDDING_BASE_URL=https://api.siliconflow.cn/v1
 ```
@@ -117,7 +117,7 @@ npm run dev
 ## 项目结构
 
 ```
-ai-knowledge-assistant/
+ai-knowledge-assistant-ts/
 ├── backend/
 │   ├── src/
 │   │   ├── index.ts          # Express 主入口
