@@ -14,8 +14,9 @@ app.use(express.json());
 const upload = multer({ storage: multer.memoryStorage() });
 
 // ===== 健康检查 =====
-app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', vectorCount: vectorStore.count });
+app.get('/api/health', async (_req, res) => {
+  const count = await vectorStore.getCount();
+  res.json({ status: 'ok', vectorCount: count });
 });
 
 // ===== 文档上传 =====
@@ -42,7 +43,7 @@ app.post('/api/upload', upload.array('files'), async (req, res) => {
       }
     }
 
-    res.json({ success: true, results, totalVectors: vectorStore.count });
+    res.json({ success: true, results, totalVectors: await vectorStore.getCount() });
   } catch (err: any) {
     console.error('[Upload Error]', err);
     res.status(500).json({ error: err.message });
@@ -158,7 +159,8 @@ app.post('/api/clear', (_req, res) => {
   res.json({ success: true, message: '知识库已清空' });
 });
 
-app.listen(config.port, () => {
+app.listen(config.port, async () => {
   console.log(`🚀 AI Knowledge Assistant API 运行在 http://localhost:${config.port}`);
-  console.log(`📚 当前向量库片段数: ${vectorStore.count}`);
+  const count = await vectorStore.getCount();
+  console.log(`📚 当前向量库片段数: ${count}`);
 });
