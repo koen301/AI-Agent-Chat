@@ -16,7 +16,7 @@
 | 向量检索 | ChromaDB + OpenAI Embedding | 持久化向量存储，余弦相似度 Top-K 检索 |
 | 文档处理 | `pdf-parse` + 递归文本分割 | 支持 PDF / TXT / MD / 代码文件 |
 
-## 项目亮点
+## 核心特点
 
 - **全 TypeScript 技术栈**：前后端统一类型定义，端到端类型安全
 - **双模式切换**：RAG 模式（纯检索生成）/ Agent 模式（工具自主决策）
