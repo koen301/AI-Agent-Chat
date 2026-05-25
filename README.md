@@ -1,6 +1,6 @@
-# 🤖 AI Knowledge Assistant - TypeScript 全栈版
+# 🤖 AI Agent Chat — 智能对话助手（TypeScript 全栈版）
 
-基于 **TypeScript + Vercel AI SDK + React** 的个人知识库问答助手，支持 RAG 检索增强生成与 Agent 工具调用。
+基于 **TypeScript + Vercel AI SDK + React + Express** 的智能对话系统，支持 RAG 检索增强生成与 ReAct Agent 工具调用。
 
 ## 截图
 
@@ -40,7 +40,7 @@ cd frontend
 npm install
 ```
 
-### 2. 启动 ChromaDB 服务（可选）
+### 2. 启动 ChromaDB 服务（推荐）
 
 如需持久化向量存储，需先启动 ChromaDB 服务：
 
@@ -48,7 +48,7 @@ npm install
 # 全局安装 chromadb（只需一次）
 npm install -g chromadb
 
-# 启动服务（数据保存在 ./chroma_db）
+# 启动服务（推荐在backend目录下启动，数据保存在 ./chroma_db）
 chroma run --path ./chroma_db
 ```
 

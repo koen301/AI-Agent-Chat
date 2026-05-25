@@ -1,4 +1,4 @@
-import { ChromaClient, getEmbeddingFunction } from 'chromadb';
+import { ChromaClient, EmbeddingFunction } from 'chromadb';
 import OpenAI from 'openai';
 import { config } from './config.js';
 
@@ -29,6 +29,18 @@ class VectorStore {
     this.client = new ChromaClient({ path: 'http://localhost:8000' });
   }
 
+  private createEmbeddingFunction(): EmbeddingFunction {
+    return {
+      generate: async (texts: string[]) => {
+        const response = await this.openai.embeddings.create({
+          model: config.embedding.model,
+          input: texts,
+        });
+        return response.data.map(d => d.embedding);
+      },
+    };
+  }
+
   /**
    * 文本转向量（Embedding）
    */
@@ -44,15 +56,16 @@ class VectorStore {
    * 获取或创建 collection
    */
   private async getCollection() {
+    const embeddingFunction = this.createEmbeddingFunction();
     try {
       return await this.client.getOrCreateCollection({
         name: this.collectionName,
-        embeddingFunction: undefined,
+        embeddingFunction,
       });
     } catch (e) {
       return await this.client.createCollection({
         name: this.collectionName,
-        embeddingFunction: undefined,
+        embeddingFunction,
       });
     }
   }

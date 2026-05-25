@@ -16,7 +16,7 @@ export default function Chat({ mode }: Props) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: '你好！我是你的 AI 知识库助手。请先上传文档，然后我可以帮你检索和回答问题。\n\n**当前模式**: ' + (mode === 'agent' ? 'Agent（支持工具调用）' : 'RAG（纯检索生成）'),
+      content: '你好！我是 AI Agent Chat。请先上传文档，我可以帮你检索文档、执行计算或回答问题。\n\n**当前模式**: ' + (mode === 'agent' ? 'Agent（支持工具调用）' : 'RAG（纯检索生成）'),
     }
   ])
   const [input, setInput] = useState('')

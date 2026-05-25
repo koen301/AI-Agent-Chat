@@ -160,7 +160,7 @@ app.post('/api/clear', (_req, res) => {
 });
 
 app.listen(config.port, async () => {
-  console.log(`🚀 AI Knowledge Assistant API 运行在 http://localhost:${config.port}`);
+  console.log(`🚀 AI Agent Chat API 运行在 http://localhost:${config.port}`);
   const count = await vectorStore.getCount();
   console.log(`📚 当前向量库片段数: ${count}`);
 });

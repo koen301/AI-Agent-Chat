@@ -30,7 +30,7 @@ function App() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Brain size={28} color="#38bdf8" />
-          <h1 style={{ fontSize: 20, fontWeight: 600 }}>AI Knowledge Assistant</h1>
+          <h1 style={{ fontSize: 20, fontWeight: 600 }}>AI Agent Chat</h1>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontSize: 14, color: '#94a3b8' }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
