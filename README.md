@@ -117,7 +117,7 @@ npm run dev
 ## 项目结构
 
 ```
-ai-knowledge-assistant-ts/
+AI-Agent-Chat/
 ├── backend/
 │   ├── src/
 │   │   ├── index.ts          # Express 主入口
